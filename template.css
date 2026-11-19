@@ -30,7 +30,6 @@
   --sh-3:0 4px 8px rgb(0 0 0 / .10), 0 24px 60px rgb(0 0 0 / .22);
 
   --tap:48px;              /* min touch target */
-  --callbar-h:0px;
   --ease:cubic-bezier(.2,.7,.2,1);
 }
 
@@ -78,13 +77,14 @@
   --field:#14233A; --field-2:#1B2E4B; --field-ink:#F4EDE1; --field-muted:#B9C3D3; --field-accent:#F2C14E;
   --cta:#C8102E; --cta-ink:#FFFFFF; --accent:#A50E26; --tint:#F6DDD8; --tint-2:#E3E7EE;
   --band:#C8102E; --band-ink:#FFFFFF;
-  --font-display:"Abril Fatface", "DM Serif Display", Georgia, serif; --font-body:"Work Sans", system-ui, sans-serif;
+  --font-display:"DM Serif Display", Georgia, serif; --font-body:"Work Sans", system-ui, sans-serif;
   --display-weight:400; --display-track:0;
   --r-sm:2px; --r:4px; --r-lg:6px;
   --pattern:repeating-linear-gradient(135deg, #000 0 2px, transparent 2px 22px);
   --pattern-size:auto; --pattern-opacity:.10;
   --edge:repeating-linear-gradient(-45deg, #C8102E 0 18px, #F4EDE1 18px 30px, #1E4FA0 30px 48px, #F4EDE1 48px 60px);
-  --edge-size:auto; --edge-h:18px; --edge-color-mode:paint;
+  --edge-size:auto; --edge-h:18px;
+  --rule:repeating-linear-gradient(-45deg, #C8102E 0 10px, #FFFBF4 10px 16px, #1E4FA0 16px 26px, #FFFBF4 26px 32px);
 }
 
 /* Contractors / trades — "blueprint grid" */
@@ -150,7 +150,7 @@
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:80px}
 body{margin:0;background:var(--bg);color:var(--ink);font:400 var(--t-base)/var(--lh-body) var(--font-body);
-  padding-bottom:calc(var(--callbar-h) + env(safe-area-inset-bottom));-webkit-font-smoothing:antialiased}
+  -webkit-font-smoothing:antialiased}
 img,svg,iframe{display:block;max-width:100%}
 [hidden]{display:none!important}
 a{color:inherit;text-underline-offset:.18em}
@@ -191,8 +191,7 @@ p{margin:0}
 .brand .mark{width:34px;height:34px;border-radius:var(--r-sm);background:var(--field-accent);color:var(--field);display:grid;place-items:center}
 .brand .mark .icon{width:20px;height:20px}
 .nav{display:none;gap:var(--s-5)}
-.site-head .btn--call .num{display:none}            /* phone: icon-only in header, full number lives in the call bar */
-.site-head .btn--call{width:var(--tap);padding:0}
+.site-head .btn--call .num{display:none}            /* phones: "Call" label; number appears from 640px */
 .nav a{text-decoration:none;font-weight:600;font-size:var(--t-sm);color:var(--field-muted);padding-block:var(--s-2)}
 .nav a:hover{color:var(--field-ink)}
 
@@ -284,14 +283,7 @@ p{margin:0}
 .svc h3{font-size:var(--t-lg);font-family:var(--font-display);line-height:1.2;align-self:end}
 [data-theme="barber"] .svc h3,[data-theme="cafe"] .svc h3{font-size:var(--t-xl)}
 .svc p{color:var(--muted);font-size:var(--t-sm)}
-.svc--ph{background:transparent!important;border:2px dashed color-mix(in srgb, var(--ink) 30%, transparent)}
-.svc--ph .svc__icon{background:transparent;border:2px dashed color-mix(in srgb, var(--ink) 30%, transparent)}
-.svc--ph:hover{transform:none;box-shadow:none}
 
-/* 4.9 Placeholder marker — visible in mockups, grep-able before launch */
-.ph{background:#FFE58A;color:#5B4300;border-radius:4px;padding:0 .3em;box-decoration-break:clone;-webkit-box-decoration-break:clone;font-weight:700}
-.ph::before{content:"PLACEHOLDER · ";font-size:.72em;letter-spacing:.08em}
-.ph-tag{display:inline-block;background:#FFE58A;color:#5B4300;font:800 10px/1 var(--font-body);letter-spacing:.12em;text-transform:uppercase;padding:5px 7px;border-radius:4px}
 
 /* 4.10 Visit = hours + map */
 .visit{display:grid;gap:var(--s-5)}
@@ -348,13 +340,6 @@ p{margin:0}
 .foot__legal{margin-top:var(--s-7);padding-top:var(--s-4);border-top:1px solid color-mix(in srgb, var(--field-ink) 18%, transparent);
   font-size:var(--t-xs);color:var(--field-muted)}
 
-/* 4.13 Sticky call bar (mobile) */
-.callbar{position:fixed;inset:auto 0 0 0;z-index:40;display:flex;gap:var(--s-2);align-items:center;
-  padding:var(--s-3) var(--s-3) calc(var(--s-3) + env(safe-area-inset-bottom));background:var(--surface);
-  border-top:1px solid var(--line);box-shadow:0 -8px 24px rgb(0 0 0 / .12)}
-.callbar .btn--call{flex:1;min-height:52px}
-.callbar .btn--dir{flex:none;width:52px;min-height:52px;padding:0;--b-bg:var(--tint);--b-ink:var(--ink)}
-.callbar__status{display:none}
 
 /* ---------- 5. BREAKPOINTS (mobile-first) ---------- */
 @media (min-width:640px){
@@ -363,12 +348,9 @@ p{margin:0}
   .reviews{grid-template-columns:repeat(2,1fr)}
   .foot__grid{grid-template-columns:repeat(3,1fr)}
   .site-head .btn--call .num{display:inline}
-  .site-head .btn--call{width:auto;padding:0 1.1em}
-  .callbar__status{display:block;font-size:var(--t-xs);font-weight:700;color:var(--muted);max-width:9rem;line-height:1.25}
+  .site-head .btn--call .lbl{display:none}
 }
 @media (min-width:960px){
-  body{padding-bottom:0}
-  .callbar{display:none}
   .nav{display:flex}
   .hero__grid{grid-template-columns:minmax(0,7fr) minmax(0,5fr);align-items:center;min-height:min(78vh,720px);padding-block:var(--s-8) var(--s-9)}
   .emblem{width:90%;margin-right:0}
@@ -384,6 +366,72 @@ p{margin:0}
   .hero__name{font-size:min(var(--t-hero), 8rem)}
 }
 
-/* Sticky call bar removed per Travis (2026-11-18) */
-.callbar{display:none!important}
-body{padding-bottom:0!important}
+/* ---------- 6. DESIGN LEVELS ----------
+   <body data-theme="…" data-level="light|medium|bold">. Bold = everything above (default).
+   Levels only remove or quiet things; they never add new content. */
+
+/* MEDIUM — sturdy and practical: color block hero, no illustration, quiet texture, no band edge */
+[data-level="medium"] .hero__pattern{opacity:calc(var(--pattern-opacity) * .25)}
+[data-level="medium"] .hero::before{background:linear-gradient(100deg, var(--field) 0 35%, color-mix(in srgb, var(--field) 70%, transparent) 70%, transparent)}
+[data-level="medium"] .emblem{display:none}
+[data-level="medium"] .hero__name{font-size:clamp(3rem, 1.7rem + 6vw, 6.5rem)}
+[data-level="medium"] .ticket{margin-top:0}
+[data-level="medium"] .ticket__notch{display:none}
+[data-level="medium"] .hero__line{max-width:40ch}
+[data-level="medium"] .band::before{display:none}
+[data-level="medium"] .site-foot .hero__pattern{display:none}
+[data-level="medium"] .foot__name{font-size:clamp(2.25rem, 1.2rem + 4vw, 4rem)}
+
+/* LIGHT — calm and typographic: light hero, hairlines, whitespace, one thin accent rule */
+[data-level="light"]{--section-y:clamp(64px, 5vw + 40px, 128px)}
+[data-level="light"] .site-head{background:color-mix(in srgb, var(--surface) 94%, transparent);color:var(--ink);border-bottom:1px solid var(--line)}
+[data-level="light"] .site-head .nav a{color:var(--muted)}
+[data-level="light"] .site-head .nav a:hover{color:var(--ink)}
+[data-level="light"] .brand .mark{background:transparent;color:var(--accent);border:1.5px solid var(--line)}
+[data-level="light"] .accent-rule{display:block;height:4px;background:var(--rule, var(--accent))}
+[data-level="light"] .hero{background:var(--bg);color:var(--ink)}
+[data-level="light"] .hero__pattern,[data-level="light"] .hero__glow,[data-level="light"] .hero::before,[data-level="light"] .emblem{display:none}
+[data-level="light"] .hero__grid{padding-block:var(--s-8) var(--s-8)}
+[data-level="light"] .hero__kicker{color:var(--muted)}
+[data-level="light"] .hero__kicker .icon{color:var(--accent)}
+[data-level="light"] .hero__name{font-size:clamp(3rem, 1.8rem + 5.2vw, 6rem);letter-spacing:-.01em;line-height:1}
+[data-level="light"] .hero__name .w--accent{color:var(--accent)}
+[data-level="light"] .hero__name .w--small{color:var(--muted);font-family:var(--font-body);font-weight:500;font-size:.26em;letter-spacing:.24em;text-transform:uppercase;margin-top:.9em}
+[data-level="light"] .hero__line{color:var(--muted);max-width:40ch}
+[data-level="light"] .hero__line strong{color:var(--ink)}
+[data-level="light"] .hero__ctas .btn--ghost{color:var(--ink)}
+[data-level="light"] .hero .btn--call,[data-level="light"] .hero .btn--call:hover{box-shadow:none}
+[data-level="light"] .hero .btn--call:hover{box-shadow:var(--sh-2)}
+[data-level="light"] .hero :focus-visible{outline-color:var(--accent)}
+[data-level="light"] .ticket{box-shadow:none;border:1px solid var(--line);margin-top:0;background:var(--surface)}
+[data-level="light"] .ticket__notch{display:none}
+[data-level="light"] .band{display:none}
+[data-level="light"] .eyebrow::before{width:18px;height:1px}
+[data-level="light"] .services{grid-template-columns:1fr!important;gap:0;border-bottom:1px solid var(--line);max-width:960px}
+[data-level="light"] .svc{background:transparent!important;border:0;border-top:1px solid var(--line);border-radius:0;padding:var(--s-5) 0;grid-template-columns:1fr;gap:var(--s-1)}
+[data-level="light"] .svc h3{align-self:start}
+[data-level="light"] .svc:hover{transform:none;box-shadow:none}
+[data-level="light"] .svc__icon{display:none}
+[data-level="light"] .svc h3{font-size:var(--t-xl)}
+[data-level="light"] .svc p{font-size:var(--t-base)}
+[data-level="light"] .review{box-shadow:none;background:transparent;border:0;border-top:1px solid var(--line);border-radius:0;padding:var(--s-6) 0 0}
+[data-level="light"] .review::before{left:0;top:.05em;font-size:3rem;line-height:1;position:static;display:block;height:.5em;margin-bottom:var(--s-3)}
+[data-level="light"] .card{box-shadow:none}
+[data-level="light"] .site-foot{background:var(--surface);color:var(--ink);border-top:1px solid var(--line)}
+[data-level="light"] .site-foot .hero__pattern{display:none}
+[data-level="light"] .foot__name{font-size:clamp(2rem, 1.2rem + 3vw, 3.25rem);color:var(--ink)}
+[data-level="light"] .foot__grid{color:var(--muted)}
+[data-level="light"] .foot__grid b,[data-level="light"] .foot__grid a{color:var(--ink)}
+[data-level="light"] .foot__legal{color:var(--muted);border-top-color:var(--line)}
+[data-level="light"] .site-foot :focus-visible{outline-color:var(--accent)}
+.accent-rule{display:none}
+@media (min-width:640px){
+  [data-level="light"] .svc{grid-template-columns:minmax(0,2fr) minmax(0,3fr);align-items:baseline;gap:var(--s-5)}
+}
+@media (min-width:960px){
+  [data-level="light"] .hero__grid{min-height:0;padding-block:var(--s-9) var(--s-9);grid-template-columns:minmax(0,7fr) minmax(0,4fr)}
+  [data-level="light"] .svc{padding:var(--s-5) 0}
+  [data-level="medium"] .hero__grid{min-height:min(70vh,640px)}
+  [data-level="medium"] .ticket{align-self:flex-end}
+  [data-level="medium"] .hero__media{justify-content:center}
+}
