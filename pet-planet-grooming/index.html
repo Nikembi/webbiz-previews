@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&amp;family=Nunito:wght@400;600;700;800&amp;display=swap">
 <link rel="stylesheet" href="../template.css">
 </head>
-<body data-theme="grooming">
+<body data-theme="grooming" data-level="bold">
 <svg xmlns="http://www.w3.org/2000/svg" hidden>
 <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 3h3.5l1.7 4.4-2.3 1.4a11 11 0 0 0 6.3 6.3l1.4-2.3L20 14.5V18a2 2 0 0 1-2 2A15 15 0 0 1 3 5a2 2 0 0 1 2-2z"/></symbol>
 <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
@@ -59,8 +59,9 @@
 <header class="site-head"><div class="container">
  <a class="brand" href="#top"><span class="mark"><svg class="icon" aria-hidden="true"><use href="#i-paw"/></svg></span>Pet Planet Grooming</a>
  <nav class="nav" aria-label="Sections"><a href="#services">Services</a><a href="#reviews">Reviews</a><a href="#visit">Hours &amp; location</a></nav>
- <a class="btn btn--sm btn--call" href="tel:+13148381417"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg><span class="num">(314) 838-1417</span></a>
+ <a class="btn btn--sm btn--call" href="tel:+13148381417"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg><span class="lbl">Call</span><span class="num">(314) 838-1417</span></a>
 </div></header>
+<div class="accent-rule" aria-hidden="true"></div>
 
 <main id="main">
 <section class="hero" id="top" aria-labelledby="biz-name">
@@ -78,7 +79,7 @@
   <div class="hero__media">
    <!-- PHOTO SLOT: when a real, owner-approved photo exists, add
         <img class="hero__photo" src="photo.jpg" alt="describe the photo" width="900" height="1100">
-        here; the emblem hides itself automatically. Keep the ticket. -->
+        here (the emblem, if any, hides itself). Keep the ticket. -->
    <div class="emblem" aria-hidden="true"><svg viewBox="0 0 400 400" role="img" aria-label="Illustration: a planet with a paw print and an orbit ring">
  <defs><clipPath id="front"><rect x="-50" y="200" width="500" height="260"/></clipPath>
  <clipPath id="ball"><circle cx="200" cy="200" r="128"/></clipPath></defs>
@@ -102,6 +103,7 @@
     <div class="ticket__row"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg><div><span class="ticket__label">Hours</span><span class="ticket__value">Tue–Sat · 9 AM–5 PM<br><small style="font-weight:500;color:var(--muted)">Closed Sunday & Monday</small></span></div></div>
     <hr>
     <div class="ticket__row"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg><div><span class="ticket__label">Find us</span><span class="ticket__value">131 Flower Valley Shopping Ctr<br>Florissant, MO 63033</span></div></div>
+    
    </div>
   </div>
  </div>
@@ -114,7 +116,7 @@
 </div></section>
 
 <section class="section section--alt" id="reviews" aria-labelledby="rev-h"><div class="container">
- <div class="section-head"><span class="eyebrow">In their words</span><h2 id="rev-h">What customers say</h2><p>Rated 4.8 out of 5 from 126 Google reviews.<!-- rating + count read from the Google Maps listing on Nov 18, 2026; re-check before each send --></p></div>
+ <div class="section-head"><span class="eyebrow">In their words</span><h2 id="rev-h">What customers say</h2><p>Rated 4.8 out of 5 on Google.<!-- count omitted: prospects.csv says 125, Google Maps showed 126 on 2026-11-18 --></p></div>
  <div class="reviews"><figure class="review"><blockquote><p>Pet planet always takes care of my Yorker Poo. Always top notch. Great service.</p></blockquote><figcaption>Sheree Lewis <span>· Google review</span></figcaption></figure><figure class="review"><blockquote><p>Our fur babies say thank you Pet Planet for a much need make-over... They may have a lot less fur but are so very happy.</p></blockquote><figcaption>Bill Smith <span>· Google review</span></figcaption></figure><figure class="review"><blockquote><p>I would recommend Pet Planet Grooming to anyone. They have a very courteous, down-to-earth and professional staff.</p></blockquote><figcaption>Latresia Deon Borden <span>· Google review</span></figcaption></figure></div>
  <p class="reviews__src">Quotes copied word-for-word from public Google reviews. <a href="https://www.google.com/maps/search/?api=1&amp;query=Pet+Planet+Grooming%2C+131+Flower+Valley+Shopping+Ctr%2C+Florissant%2C+MO+63033" target="_blank" rel="noopener">Read all reviews on Google</a></p>
 </div></section>
@@ -154,10 +156,7 @@
 </footer>
 
 <script>
-/* Open-now indicator. ~0.8 KB. No dependencies.
-   Reads <table data-hours data-tz="America/Chicago"> rows: <tr data-d="0-6 (Sun=0)" data-o="09:00" data-c="17:00">.
-   Updates every [data-status] element; their default text (the plain hours) stays if JS is off.
-   Preview a time with ?now=3-11:00 (weekday-HH:MM). */
+/* Open-now indicator: see SPEC.md. */
 (function () {
   var t = document.querySelector('[data-hours]');
   if (!t || !window.Intl) return;
