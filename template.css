@@ -435,3 +435,198 @@ p{margin:0}
   [data-level="medium"] .ticket{align-self:flex-end}
   [data-level="medium"] .hero__media{justify-content:center}
 }
+
+/* =====================================================================
+   7. VARIANTS (added 2026-11-19, additive only)
+   <body data-theme="auto" data-variant="red"> keeps every rule of the base
+   theme (button shape, band edge, etc.) and only re-sets theme variables.
+   Pages without data-variant are unaffected.
+   ===================================================================== */
+[data-theme="auto"][data-variant="red"]{
+  --bg:#F4F2EF; --surface:#FFFFFF; --ink:#18171A; --muted:#55525A; --line:#DFDBD6;
+  --field:#1C1B1F; --field-2:#2A282E; --field-ink:#F5F3F0; --field-muted:#B4AFB8; --field-accent:#FF6B5E;
+  --cta:#C8281E; --cta-ink:#FFFFFF; --accent:#B0231A; --tint:#FBE0DC; --tint-2:#E8E5E1;
+  --band:#C8281E; --band-ink:#FFFFFF;
+  --font-display:"Oswald", "Arial Narrow", Impact, sans-serif; --font-body:"Barlow", system-ui, sans-serif;
+  --display-weight:700; --display-track:0;
+}
+[data-theme="auto"][data-variant="retro"]{
+  --bg:#F6EFE3; --surface:#FFFDF8; --ink:#2A1410; --muted:#6B544B; --line:#E6D9C6;
+  --field:#5B1A14; --field-2:#6E231B; --field-ink:#F6EFE3; --field-muted:#E3C9B8; --field-accent:#F2B33D;
+  --cta:#F2B33D; --cta-ink:#2A1410; --accent:#9A3412; --tint:#FBE7C2; --tint-2:#EFE3D3;
+  --band:#F2B33D; --band-ink:#2A1410;
+  --font-display:"Alfa Slab One", "Rockwell", Georgia, serif; --font-body:"Source Sans 3", system-ui, sans-serif;
+  --display-weight:400; --display-case:uppercase; --display-track:.01em;
+  --pattern:repeating-linear-gradient(0deg, #000 0 2px, transparent 2px 14px);
+  --pattern-size:auto; --pattern-opacity:.3;
+}
+[data-theme="auto"][data-variant="navy"]{
+  --bg:#F3F4F6; --surface:#FFFFFF; --ink:#101826; --muted:#4F5867; --line:#D9DEE6;
+  --field:#0F2340; --field-2:#16305A; --field-ink:#F3F5F9; --field-muted:#B5C2D6; --field-accent:#FF8A2A;
+  --cta:#FF8A2A; --cta-ink:#0F1C2E; --accent:#A84600; --tint:#FFE6D1; --tint-2:#E2E8F1;
+  --band:#FF8A2A; --band-ink:#0F1C2E;
+  --font-display:"Archivo", system-ui, sans-serif; --font-body:"Inter", system-ui, sans-serif;
+  --display-weight:800; --display-track:-.02em;
+}
+[data-theme="auto"][data-variant="slate"]{
+  --bg:#EFF2F4; --surface:#FFFFFF; --ink:#0E1A22; --muted:#4D5B66; --line:#D6DDE2;
+  --field:#18232E; --field-2:#213140; --field-ink:#EEF3F6; --field-muted:#A7B6C2; --field-accent:#4CC9E0;
+  --cta:#4CC9E0; --cta-ink:#0E1A22; --accent:#0A6577; --tint:#D5F2F7; --tint-2:#E1E7EB;
+  --band:#4CC9E0; --band-ink:#0E1A22;
+  --font-display:"Saira Condensed", "Arial Narrow", sans-serif; --font-body:"Saira", system-ui, sans-serif;
+  --display-weight:800; --display-track:0;
+  --pattern:repeating-linear-gradient(115deg, #000 0 1px, transparent 1px 18px);
+  --pattern-size:auto; --pattern-opacity:.35;
+}
+[data-theme="auto"][data-variant="forest"]{
+  --bg:#F1F1EC; --surface:#FFFFFF; --ink:#13201A; --muted:#4F5A53; --line:#DADCD2;
+  --field:#14281F; --field-2:#1C3A2C; --field-ink:#F1F2EC; --field-muted:#AFC2B6; --field-accent:#F5B83D;
+  --cta:#F5B83D; --cta-ink:#14281F; --accent:#855500; --tint:#FCEBC6; --tint-2:#E0E6DF;
+  --band:#F5B83D; --band-ink:#14281F;
+  --font-display:"Roboto Condensed", "Arial Narrow", sans-serif; --font-body:"Roboto", system-ui, sans-serif;
+  --display-weight:800; --display-track:-.01em;
+}
+[data-theme="auto"][data-variant="steel"]{
+  --bg:#F5F6F7; --surface:#FFFFFF; --ink:#16202A; --muted:#535E69; --line:#DDE2E7;
+  --field:#16202A; --field-2:#1F2B37; --field-ink:#F5F6F7; --field-muted:#B3BDC7; --field-accent:#7FA8F0;
+  --cta:#1F5FC9; --cta-ink:#FFFFFF; --accent:#1F5FC9; --tint:#E1EBFB; --tint-2:#E6EAEE;
+  --band:#1F5FC9; --band-ink:#FFFFFF;
+  --font-display:"Space Grotesk", system-ui, sans-serif; --font-body:"Inter", system-ui, sans-serif;
+  --display-weight:700; --display-case:none; --display-track:-.03em;
+}
+[data-theme="grooming"][data-variant="plum"]{
+  --bg:#FBF5F8; --surface:#FFFFFF; --ink:#2D1630; --muted:#654F68; --line:#EBDDE6;
+  --field:#3B1A45; --field-2:#552763; --field-ink:#FBF5F8; --field-muted:#E2CBE6; --field-accent:#F7C948;
+  --cta:#F7C948; --cta-ink:#2D1630; --accent:#8E2A8C; --tint:#FBEFC9; --tint-2:#EEDFF0;
+  --band:#F7C948; --band-ink:#2D1630;
+  --font-display:"Baloo 2", ui-rounded, system-ui, sans-serif; --font-body:"Nunito", system-ui, sans-serif;
+  --display-weight:800; --display-track:-.015em;
+  --pattern:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cg fill='none' stroke='%23000' stroke-width='3' stroke-linejoin='round'%3E%3Cpath d='M30 20l14 14-14 14-14-14z'/%3E%3Cpath d='M140 110l9 9-9 9-9-9z'/%3E%3Cpath d='M150 30l5 5-5 5-5-5z'/%3E%3C/g%3E%3Cg fill='%23000'%3E%3Cellipse cx='60' cy='130' rx='11' ry='9'/%3E%3Ccircle cx='46' cy='115' r='4.6'/%3E%3Ccircle cx='56' cy='109' r='4.6'/%3E%3Ccircle cx='66' cy='109' r='4.6'/%3E%3Ccircle cx='75' cy='116' r='4.6'/%3E%3Ccircle cx='110' cy='60' r='3'/%3E%3C/g%3E%3C/svg%3E");
+  --pattern-size:180px; --pattern-opacity:.12;
+  --edge:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='16' viewBox='0 0 40 16'%3E%3Cpath d='M0 16L20 0l20 16z' fill='%23000'/%3E%3C/svg%3E");
+  --edge-size:40px 16px; --edge-h:16px;
+}
+[data-theme="grooming"][data-variant="sky"]{
+  --bg:#F2F7FB; --surface:#FFFFFF; --ink:#0F2A3D; --muted:#4C6273; --line:#D8E4EE;
+  --field:#12476B; --field-2:#175A86; --field-ink:#F2F7FB; --field-muted:#BCD6E8; --field-accent:#FFD45C;
+  --cta:#FFD45C; --cta-ink:#0F2A3D; --accent:#8F4A00; --tint:#FFF1C7; --tint-2:#DCEAF4;
+  --band:#FFD45C; --band-ink:#0F2A3D;
+  --font-display:"Lexend", system-ui, sans-serif; --font-body:"Nunito", system-ui, sans-serif;
+  --display-weight:700; --display-track:-.03em;
+  --r-sm:10px; --r:16px; --r-lg:24px;
+}
+[data-theme="grooming"][data-variant="sage"]{
+  --bg:#F6F4EC; --surface:#FFFEFA; --ink:#23332B; --muted:#57655D; --line:#E2E0D2;
+  --field:#2F4A3C; --field-2:#3A5A49; --field-ink:#F6F4EC; --field-muted:#CFDCD3; --field-accent:#E9A27F;
+  --cta:#A84D28; --cta-ink:#FFFFFF; --accent:#9C4423; --tint:#F4E1D6; --tint-2:#E3E9E1;
+  --band:#A84D28; --band-ink:#FFFFFF;
+  --font-display:"Quicksand", ui-rounded, system-ui, sans-serif; --font-body:"Nunito", system-ui, sans-serif;
+  --display-weight:700; --display-track:-.02em;
+  --rule:repeating-linear-gradient(90deg, #A84D28 0 28px, transparent 28px 40px);
+}
+[data-theme="trades"][data-variant="lawn"]{
+  --bg:#F3F6EE; --surface:#FFFFFF; --ink:#14261A; --muted:#4D5E51; --line:#DCE4D3;
+  --field:#1F4D2B; --field-2:#2A6338; --field-ink:#F5F9EF; --field-muted:#C3DDB9; --field-accent:#B7E36A;
+  --cta:#B7E36A; --cta-ink:#14261A; --accent:#2F6B1F; --tint:#E5F4CF; --tint-2:#E1EBDA;
+  --band:#B7E36A; --band-ink:#14261A;
+  --font-display:"Bricolage Grotesque", system-ui, sans-serif; --font-body:"Inter", system-ui, sans-serif;
+  --display-weight:800; --display-case:none; --display-track:-.035em;
+  --r-sm:8px; --r:12px; --r-lg:20px;
+  --pattern:repeating-linear-gradient(90deg, #000 0 64px, transparent 64px 128px);
+  --pattern-size:auto; --pattern-opacity:.28;
+}
+/* variant helpers */
+.hours__alt{color:var(--muted);font-size:var(--t-base);margin-bottom:var(--s-4)}
+.visit-note{margin-top:var(--s-3);font-size:var(--t-sm);color:var(--muted)}
+[data-variant="lawn"] .btn{text-transform:none;letter-spacing:0}
+
+/* =====================================================================
+   8. LAYOUTS (added 2026-11-19 by Designer, additive only)
+   <body data-layout="split|board|services|centered|sign">. "split" (or no attribute) = the original hero.
+   Pages without data-layout are unaffected.
+   ===================================================================== */
+/* long business names: one step down so 2-line names don't overflow the 7/12 column */
+[data-name="long"] .hero__name{font-size:clamp(2.6rem, 1.5rem + 4.4vw, 5rem)}
+/* forest variant (Hemann): mixed-case display type so it doesn't read like the other all-caps auto pages */
+[data-theme="auto"][data-variant="forest"]{--display-case:none; --display-track:-.02em}
+
+/* board: the weekly hours table is the hero graphic (odd or long schedules) */
+.board{position:relative;z-index:1;background:var(--surface);color:var(--ink);border-radius:var(--r-lg);box-shadow:var(--sh-3);
+  padding:var(--s-5);width:100%;max-width:440px;margin-left:auto;border-top:6px solid var(--cta)}
+.board__top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:var(--s-2) var(--s-3);margin-bottom:var(--s-3)}
+.board__title{font:var(--display-weight) var(--t-xl)/1.05 var(--font-display);text-transform:var(--display-case);letter-spacing:var(--display-track)}
+.board table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+.board th,.board td{padding:9px 8px;border-bottom:1px dashed var(--line);font-size:var(--t-base);text-align:left;white-space:nowrap}
+.board th{font-weight:600}
+.board td{text-align:right;font-weight:700}
+.board tr:last-child th,.board tr:last-child td{border-bottom:0}
+.board tr.is-closed td{color:var(--muted);font-weight:500}
+.board tr.is-today{background:var(--tint)}
+.board tr.is-today th::after{content:"Today";margin-left:.5em;font:800 10px/1 var(--font-body);letter-spacing:.12em;text-transform:uppercase;
+  background:var(--ink);color:var(--surface);padding:4px 6px;border-radius:4px;vertical-align:2px}
+.board__foot{margin-top:var(--s-4);padding-top:var(--s-3);border-top:1px solid var(--line);display:grid;gap:var(--s-2);font-size:var(--t-sm);color:var(--muted)}
+.board__foot span{display:flex;gap:var(--s-2);align-items:center}
+.board__foot b{color:var(--ink)}
+.board__foot .icon{color:var(--accent)}
+
+/* services: the service list replaces the ticket in the hero (shops whose strength is the menu) */
+.svc-panel{position:relative;z-index:1;background:var(--surface);color:var(--ink);border-radius:var(--r-lg);box-shadow:var(--sh-3);
+  padding:var(--s-5) var(--s-5) var(--s-4);width:100%;max-width:440px;margin-left:auto}
+.svc-panel h2{font-size:var(--t-xl);line-height:1.1;margin-bottom:var(--s-2)}
+.svc-panel ul{list-style:none;margin:0 0 var(--s-3);padding:0;display:grid}
+.svc-panel li{display:flex;gap:var(--s-3);align-items:center;padding:11px 0;border-bottom:1px solid var(--line);font-weight:700}
+.svc-panel li .icon{color:var(--accent);width:22px;height:22px}
+.svc-panel__foot{display:flex;gap:var(--s-2);align-items:center;font-size:var(--t-sm);color:var(--muted);margin-top:var(--s-2)}
+.svc-panel__foot .icon{color:var(--accent);width:18px;height:18px}
+
+/* centered + sign: one centered column, facts in a horizontal bar under the CTAs */
+[data-layout="centered"] .hero__grid,[data-layout="sign"] .hero__grid{grid-template-columns:minmax(0,1fr)!important;text-align:center;justify-items:center}
+[data-layout="centered"] .hero__kicker,[data-layout="sign"] .hero__kicker{display:flex;justify-content:center}
+[data-layout="centered"] .hero__line,[data-layout="sign"] .hero__line{margin-inline:auto}
+[data-layout="centered"] .hero__ctas,[data-layout="sign"] .hero__ctas{justify-content:center;margin-inline:auto}
+[data-layout="centered"] .hero::before,[data-layout="sign"] .hero::before{background:radial-gradient(ellipse at 50% 40%, var(--field) 30%, color-mix(in srgb, var(--field) 60%, transparent) 75%)}
+.factbar{display:grid;gap:1px;margin:var(--s-7) auto 0;width:100%;max-width:1000px;text-align:left;border-radius:var(--r-lg);overflow:hidden;
+  background:color-mix(in srgb, var(--field-ink) 16%, transparent);border:1px solid color-mix(in srgb, var(--field-ink) 16%, transparent)}
+.fact{display:flex;gap:var(--s-3);align-items:flex-start;padding:var(--s-5);background:var(--field-2)}
+.fact .icon{color:var(--field-accent);margin-top:.15em}
+.fact .ticket__label{color:var(--field-muted)}
+.fact .ticket__value{display:block;color:var(--field-ink);font-size:var(--t-lg)}
+.fact small{display:block;color:var(--field-muted);font-size:var(--t-sm);margin-top:2px}
+.fact small a{color:var(--field-ink)}
+.fact .status{margin-top:var(--s-3)}
+.fact--stat{flex-direction:column;gap:var(--s-1);justify-content:center}
+.fact__big{font:var(--display-weight) clamp(2.75rem, 2rem + 2.5vw, 4rem)/.9 var(--font-display);color:var(--field-accent);letter-spacing:var(--display-track)}
+@media (min-width:760px){ .factbar{grid-template-columns:repeat(var(--cells,3), minmax(0,1fr))} }
+
+/* sign: the name sits in a painted-sign panel (retro storefront feel) */
+.signboard{display:block;width:fit-content;max-width:100%;margin:var(--s-2) auto var(--s-6);padding:var(--s-5) clamp(20px, 4vw, 56px) var(--s-4);border:3px solid var(--field-accent);
+  border-radius:var(--r-lg);box-shadow:inset 0 0 0 6px var(--field), inset 0 0 0 8px color-mix(in srgb, var(--field-accent) 55%, transparent)}
+.signboard .hero__name{margin-bottom:0;font-size:clamp(2.75rem, 1.4rem + 6vw, 6.25rem);line-height:.98}
+
+@media (min-width:960px){
+  [data-layout="centered"] .hero__grid,[data-layout="sign"] .hero__grid{min-height:0;padding-block:var(--s-8) var(--s-8)}
+  [data-layout="board"] .hero__grid,[data-layout="services"] .hero__grid{grid-template-columns:minmax(0,7fr) minmax(0,5fr)}
+}
+/* phones: long brand names in the sticky header wrap to two tidy lines instead of crowding the Call button */
+@media (max-width:639px){ .brand{font-size:1.0625rem;line-height:1.1} .brand .mark{width:30px;height:30px} }
+
+/* =====================================================================
+   9. LEVEL-SPECIFIC VARIANT FIELDS (added 2026-11-19 round 2, additive)
+   Light-metal and pale-sage hero fields, used only when these variants
+   run at medium/bold. Light-level pages with the same variant are unchanged.
+   ===================================================================== */
+/* Bing & Nagle: steel at medium = brushed light-steel block, tread plate */
+[data-theme="auto"][data-variant="steel"][data-level="medium"]{
+  --field:#D3DAE1; --field-2:#E3E8ED; --field-ink:#16202A; --field-muted:#46525E; --field-accent:#1A55B8;
+  --pattern-opacity:.3;
+}
+[data-variant="steel"][data-level="medium"] .hero{border-bottom:1px solid #B7C1CB}
+[data-variant="steel"][data-level="medium"] .site-head{border-bottom:1px solid #B7C1CB}
+[data-variant="steel"][data-level="medium"] .ticket{border:1px solid #C3CCD5}
+/* Sandy's Clipper: sage at bold = pale sage block, terracotta accent */
+[data-theme="grooming"][data-variant="sage"][data-level="bold"]{
+  --field:#E4EBDD; --field-2:#D3DFCB; --field-ink:#23332B; --field-muted:#4F5E55; --field-accent:#97411F;
+  --pattern-opacity:.08;
+}
+[data-variant="sage"][data-level="bold"] .site-head{border-bottom:1px solid #C9D5C0}
+[data-variant="sage"][data-level="bold"] .ticket{border:1px solid #D5DECD}
